@@ -65,34 +65,13 @@ const  filterContactsFunc = ()=>{
           value={filter}
           onChange={searchHandle}
         />
-        {contacts.length ? <ContactList
+        {contacts.length && <ContactList
           onDeleteContact={deleteContact}
-          values={filterContactsFunc()} /> : ''}
+          values={filterContactsFunc()} />}
        </Section>
        </>
   )
 }
-
-
-
-
-
-// class App extends React.Component{
-//   componentDidMount (){
-//     const contacts = JSON.parse(localStorage.getItem('contacts'));
-//     if (contacts) {
-//       this.setState({contacts: contacts})
-//     }
-    
-//     }
-    
-// componentDidUpdate(prevProps, prevState){
-//     if (this.state.contacts !== prevState.contacts) {
-//       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
-//     }
-//   }
-
-// };
 
 
 export {App}
